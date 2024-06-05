@@ -16,8 +16,14 @@
   </div>
   <div>
     <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-Mail</mat-label>
+      <input [disabled]="loading" matInput [(ngModel)]="user.email" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline" class="full-width">
       <mat-label>Birth Date</mat-label>
-      <input [disabled]="loading" matInput [matDatepicker]="picker1" [(ngModel)]="birthDate" />
+      <input [disabled]="loading" matInput [matDatepicker]="picker1" placeholder="MM/dd/yyyy" [(ngModel)]="user.birthDate" />
       <mat-datepicker-toggle matSuffix [for]="picker1" [disabled]="loading"></mat-datepicker-toggle>
       <mat-datepicker #picker1></mat-datepicker>
     </mat-form-field>
@@ -31,7 +37,7 @@
   <div>
     <mat-form-field appearance="outline" class="mr-16">
       <mat-label>Zip Code</mat-label>
-      <input [disabled]="loading" matInput *ngIf="user.zipCode === 0" value=""  />
+      <input [disabled]="loading" matInput [(ngModel)]="user.zipCode" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>City</mat-label>
@@ -39,7 +45,7 @@
     </mat-form-field>
   </div>
   <mat-dialog-actions>
-    <button [disabled]="loading" mat-button>Cancel</button>
+    <button [disabled]="loading" mat-button (click)="dialogRef.close()">Cancel</button>
     <button [disabled]="loading" mat-button (click)="saveUser()">Save</button>
   </mat-dialog-actions>
 </mat-dialog-content>

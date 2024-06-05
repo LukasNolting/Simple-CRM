@@ -5,19 +5,14 @@
     <tr>
       <th>Name</th>
       <th>E-Mail</th>
-      <th>Birth Date</th>
+      <th>City</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Test</td>
-      <td>Test</td>
-      <td>Test</td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Test</td>
-      <td>Test</td>
+    <tr *ngFor="let user of allUsers" [routerLink]="['/user/', user.id]">
+      <td>{{ user.firstName }} {{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.city }}</td>
     </tr>
   </tbody>
 </table>

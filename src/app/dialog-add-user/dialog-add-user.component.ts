@@ -46,15 +46,17 @@ export class DialogAddUserComponent {
     lastName: '',
     birthDate: 0,
     street: '',
-    zipCode: 0,
+    zipCode: '',
     city: '',
+    email: '',
+    id: '',
   };
   loading = false;
 
   saveUser() {
     this.loading = true;
 
-    this.user.birthDate = this.birthDate.getTime();
+    // this.user.birthDate = this.birthDate.getTime();
     console.log(this.user);
     const usersCollectionRef = collection(this.firestore, 'users');
     addDoc(usersCollectionRef, this.user)
