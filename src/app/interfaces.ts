@@ -3,6 +3,6 @@ export interface User{
     lastName: string;
     birthDate: number;
     street: string;
-    zipCode: string;
+    zipCode: number;
     city: string;
 }

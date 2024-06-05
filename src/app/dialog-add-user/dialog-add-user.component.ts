@@ -46,7 +46,7 @@ export class DialogAddUserComponent {
     lastName: '',
     birthDate: 0,
     street: '',
-    zipCode: '',
+    zipCode: 0,
     city: '',
   };
   loading = false;

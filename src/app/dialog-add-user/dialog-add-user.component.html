@@ -31,7 +31,7 @@
   <div>
     <mat-form-field appearance="outline" class="mr-16">
       <mat-label>Zip Code</mat-label>
-      <input [disabled]="loading" matInput [(ngModel)]="user.zipCode" />
+      <input [disabled]="loading" matInput *ngIf="user.zipCode === 0" value=""  />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>City</mat-label>
