@@ -8,17 +8,6 @@ import { User } from '../interfaces';
 import { MatCardModule } from '@angular/material/card';
 import {
   Firestore,
-  collection,
-  doc,
-  collectionData,
-  onSnapshot,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  query,
-  where,
-  limit,
-  orderBy,
 } from '@angular/fire/firestore';
 
 @Component({
