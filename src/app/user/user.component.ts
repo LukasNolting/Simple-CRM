@@ -27,15 +27,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './user.component.scss',
 })
 export class UserComponent {
-  users: User[] = [];
   allUsers: User[] = [];
-  unsubUsers;
+
   firestore: Firestore = inject(Firestore);
+  unsubUsers;
 
   constructor(public dialog: MatDialog) {
     this.unsubUsers = this.subUsersList();
   }
-
+  
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
   }
@@ -51,7 +51,7 @@ export class UserComponent {
       list.forEach((element) => {
         this.allUsers.push(this.setUserObject(element.data(), element.id));
       });
-      console.log("allUsers",this.allUsers);
+      console.log("allUsers", this.allUsers);
     });
     
   }

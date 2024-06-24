@@ -5,8 +5,6 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +27,5 @@ export class AppComponent {
     const aCollection = collection(this.firestore, 'users');
     this.items$ = collectionData(aCollection);
   }
-
-  title = 'simple-crm-c9a56';
+  title = 'SimpleCRM';
 }

@@ -56,7 +56,7 @@ export class DialogAddUserComponent {
   saveUser() {
     this.loading = true;
 
-    // this.user.birthDate = this.birthDate.getTime();
+    this.user.birthDate = this.birthDate.getTime();
     console.log(this.user);
     const usersCollectionRef = collection(this.firestore, 'users');
     addDoc(usersCollectionRef, this.user)
